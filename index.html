@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TodoList</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5645581846.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
@@ -13,10 +14,30 @@
     <!-- ------------------------------- -->
     <!-- START -->
 
+    <div id="main">
 
+        <!-- ------------------------------- -->
+        <!-- INPUT -->
 
+        <div class="todo-input">
+            <input class="btn" type="text" v-model="newTodo" @keyup.enter="addTodo">
+            <input class="btn btn-danger" type="button" value="Add" @click="addTodo">
+        </div>
 
+        <div class="wrap-list">
 
+            <!-- ------------------------------- -->
+            <!-- LIST -->
+
+            <ul class="todo-list">
+                <li v-for="(element,index) in todoList" class="todo-elem">
+                    <i class="fa-solid fa-xmark" @click="deleteTodo(index)"></i>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
 
     <!-- ------------------------------- -->
     <!-- JS -->
