@@ -31,7 +31,7 @@
 
             <ul class="todo-list">
                 <li v-for="(element,index) in todoList" class="todo-elem">
-                    {{element}}
+                    {{element.text}}
                     <i class="fa-solid fa-xmark" @click="deleteTodo(index)"></i>
                 </li>
             </ul>

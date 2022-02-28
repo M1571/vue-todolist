@@ -19,7 +19,7 @@ cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un
 // -------------------------------
 // START 
 
-
+/*
 const main = new Vue({
     
     el: '#main',
@@ -52,12 +52,12 @@ const main = new Vue({
 }
 
 )
-
+*/
 
 // -------------------------------
 // START
 
-/*
+
 const main = new Vue ({
     
     el: '#main',
@@ -93,9 +93,13 @@ const main = new Vue ({
                 )
 
             this.newTodo = '';
-        }
-    }
+        },
+
+        deleteTodo(i) {
+            console.log(i);
+            this.todoList.splice(i,1);
+        },
+    },
 }
 
 )
-*/
