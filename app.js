@@ -17,4 +17,85 @@ cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un
 */
 
 // -------------------------------
+// START 
+
+
+const main = new Vue({
+    
+    el: '#main',
+    data: {
+        newTodo: '',
+        todoList: [
+            'git commit',
+            'git push',
+            'leave building'
+        ]
+    },
+
+    methods: {
+
+        addTodo: function() {
+            console.log(this.newTodo, this.newTodo.lenght)
+            if(this.newTodo !== '') {
+                console.log('written');
+                this.todoList.push(this.newTodo);
+            } else {
+                console.log('empty');
+            }
+            this.newTodo = '';
+        },
+
+        deleteTodo(i) {
+            this.todoList.splice(i,1);
+        }
+    },
+}
+
+)
+
+
+// -------------------------------
 // START
+
+/*
+const main = new Vue ({
+    
+    el: '#main',
+    data: {
+        newTodo: '',
+        todoList: [
+            {
+                text: 'git commit',
+                done: 'true',
+            },
+
+            {
+                text: 'git push',
+                done: 'true',
+            },
+
+            {
+                text: 'leave building',
+                done: 'false',
+            },
+        ]
+    },
+
+    methods: {
+
+        addTodo: function() {
+            console.log(this.newTodo, this.newTodo.lenght)
+            if(this.newTodo !== '') {
+                this.todoList.push({
+                    text: this.newTodo,
+                    done: false,
+                }
+                )
+
+            this.newTodo = '';
+        }
+    }
+}
+
+)
+*/
